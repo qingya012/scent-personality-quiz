@@ -17,25 +17,5 @@ Discover your scent persona and get a matching fragrance recommendation.
 - Tailwind CSS (optional)
 - GitHub Pages for deployment
 
-## 📁 Project Structure
-
-scent-personality-quiz/
-├── src/
-│   ├── App.jsx               
-│   ├── components/
-│   │   └── ScentPersonalityQuiz.jsx
-│   └── index.js
-├── public/
-│   └── index.html
-├── package.json
-└── vite.config.js
-
-## 🚀 Getting Started
-
-git clone https://github.com/qingya012/scent-personality-quiz.git
-cd scent-personality-quiz
-npm install
-npm run dev
-
 
 
