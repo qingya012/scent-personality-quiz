@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      input: '/public/index.html' // 显式指定入口
+      input: 'index.html' // 显式指定入口
     }
   }
 });
