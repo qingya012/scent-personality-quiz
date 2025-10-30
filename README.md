@@ -19,6 +19,7 @@ A lightweight, front-end personality quiz about scent preferences. Users answer 
 
 ## Project structure
 
+```text
 scent-personality-quiz/
 ├─ public/
 ├─ src/
