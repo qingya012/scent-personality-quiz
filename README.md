@@ -38,6 +38,7 @@ scent-personality-quiz/
 ├─ package.json
 ├─ vite.config.js
 └─ README.md
+```
 
 ## ⚙️ Tech Stack
 
