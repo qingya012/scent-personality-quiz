@@ -38,7 +38,7 @@ export default function ScentPersonalityQuiz() {
         <h2 className="text-2xl font-semibold mb-4">{result.name}</h2>
         <p className="mb-2">{result.summary}</p>
         <p className="text-gray-500">
-          Recommened notes: {result.suggestions.join(", ")}
+          Recommended: {result.suggestions.join(", ")}
         </p>
       </div>
     );
@@ -57,10 +57,10 @@ export default function ScentPersonalityQuiz() {
         {q.options.map((opt, i) => (
           <button
           key ={i}
-          onClick={() => handlePick(option.weights)}
+          onClick={() => handlePick(opt.weights)}
           className="block w-full bg-purple-100 hover:bg-purple-200 text-gray-800 py-2 rounded-lg transition"
           >
-            {option.text}
+            {opt.text}
           </button>
         ))}
       </div>
