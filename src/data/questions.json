@@ -1,0 +1,112 @@
+{
+  "personas": ["fruity", "floral", "woody", "oriental"],
+  "tieBreak": ["oriental", "woody", "floral", "fruity"],
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Which kind of everyday life do you long for?",
+      "options": [
+        { "text": "Walking alone in the rain", "weights": [0,0,2,1] },
+        { "text": "Sunny meadow", "weights": [3,1,0,0] },
+        { "text": "Midnight streets", "weights": [0,0,1,3] },
+        { "text": "A quiet library", "weights": [0,1,3,0] }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "If a scent had a color, what would it be?",
+      "options": [
+        { "text": "Deep purple", "weights": [0,0,0,3] },
+        { "text": "Amber yellow", "weights": [3,0,0,0] },
+        { "text": "Silver white", "weights": [0,2,1,0] },
+        { "text": "Moss green", "weights": [0,1,2,0] }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "What kind of scent do you prefer?",
+      "options": [
+        { "text": "Wood and resin", "weights": [0,0,3,1] },
+        { "text": "Fruits and blossoms", "weights": [2,2,0,0] },
+        { "text": "Smoke and leather", "weights": [0,0,2,2] },
+        { "text": "Herbal calmness", "weights": [0,1,2,0] }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "What first impression do you want to give to strangers?",
+      "options": [
+        { "text": "Distant but reliable", "weights": [0,0,2,1] },
+        { "text": "Warm and friendly", "weights": [1,2,0,0] },
+        { "text": "Intriguing and charming", "weights": [0,0,1,3] },
+        { "text": "Quiet and reserved", "weights": [0,0,3,0] }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "Which quote resonates with you the most?",
+      "options": [
+        { "text": 
+            "\"I have nature and art and poetry, and if that is not enough, what is enough?\" - Vincent van Gogh", 
+            "weights": [2,1,0,0] },
+        { "text": 
+            "\"There is a crack in everything, that's how the light gets in.\" - Leonard Cohen",
+            "weights": [0,0,1,2] },
+        { "text": "\"Freedom lies in being bold.\" - Robert Frost", 
+            "weights": [2,0,1,0] },
+        { "text": "\"The universe is not only stranger than we imagine, it is stranger than we can imagine.\" - J.B.S. Haldane",
+            "weights": [0,0,0,3] }
+      ]
+    },
+    {
+      "id": "q6",
+      "text": "If you were a perfume, you would be like: ",
+      "options": [
+        { "text": "A forgotten diary", "weights": [0,0,2,1] },
+        { "text": "A half-used train ticket", "weights": [2,1,0,0] },
+        { "text": "A street tobacco stand", "weights": [0,0,1,3] },
+        { "text": "A shattered glass pendant", "weights": [0,2,0,1] }
+      ]
+    },
+    {
+      "id": "q7",
+      "text": "What does the night mean to you?",
+      "options": [
+        { "text": "Solitude and reflection", "weights": [0,0,3,1] },
+        { "text": "Soft light and comfort", "weights": [1,3,0,0] },
+        { "text": "Mystery and possibility", "weights": [0,0,1,3] },
+        { "text": "Peace and order", "weights": [0,1,3,0] }
+      ]
+    },
+    {
+      "id": "q8",
+      "text": "What kind of weather do you enjoy the most?",
+      "options": [
+        { "text": "Clear breeze", "weights": [3,1,0,0] },
+        { "text": "Rain approaching", "weights": [0,0,2,1] },
+        { "text": "Thick fog", "weights": [0,0,1,2] },
+        { "text": "First snow", "weights": [0,1,2,0] }
+      ]
+    }, 
+    {
+        "id": "q9",
+        "text": "If you were a plant, you would be:",
+        "options": [
+            { "text": "Pine tree", "weights": [0,0,3,1] },
+            { "text": "Rose", "weights": [0,3,0,0] },
+            { "text": "Mint", "weights": [1,1,2,0] },
+            { "text": "Tuberose", "weights": [0,2,0,1] }
+        ]
+    },
+    {
+        "id": "q10",
+        "text": "When a familiar melody starts playing, you tend to:",
+        "options": [
+            { "text": "Hum along", "weights": [3,0,0,0] },
+            { "text": "Sink into memories", "weights": [0,2,0,1] },
+            { "text": "Close your eyes to listen", "weights": [0,0,2,1] },
+            { "text": "Keep walking forward", "weights": [2,0,1,0] }
+        ]
+    }
+  ]
+}

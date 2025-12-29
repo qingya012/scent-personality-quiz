@@ -1,0 +1,22 @@
+{
+  "fruity": {
+    "name": "Fruity",
+    "summary": "Bright, juicy, and playful — perfect for everyday wear and morning energy.",
+    "suggestions": ["Citrus", "Berry", "Green Apple"]
+  },
+  "floral": {
+    "name": "Floral",
+    "summary": "Soft, elegant, and inviting — ideal for close encounters and gentle impressions.",
+    "suggestions": ["Jasmine", "Rose", "Gardenia"]
+  },
+  "woody": {
+    "name": "Woody",
+    "summary": "Clean, composed, and structured — understated yet enduring in charm.",
+    "suggestions": ["Sandalwood", "Cedarwood", "Vetiver"]
+  },
+  "oriental": {
+    "name": "Oriental",
+    "summary": "Warm, rich, and layered — captivating in the evening and formal occasions.",
+    "suggestions": ["Vanilla", "Amber", "Resin and Spices"]
+  }
+}
