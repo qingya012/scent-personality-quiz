@@ -8,7 +8,6 @@ import GradientBackground from "./GradientBackground";
 
 const personas = ["fruity", "floral", "woody", "oriental"];
 const tieBreak = ["oriental", "woody", "floral", "fruity"]; // 平分时优先级（可改）
-const [started, setStarted] = useState(false);
 
 function pickWinner(scores) {
   const maxVal = Math.max(...personas.map((p) => scores[p] ?? 0));
@@ -19,6 +18,8 @@ function pickWinner(scores) {
 }
 
 export default function ScentPersonalityQuiz() {
+  const [started, setStarted] = useState(false);
+  
   const questions = questionsData.questions ?? [];
   const total = questions.length;
 
@@ -78,7 +79,7 @@ export default function ScentPersonalityQuiz() {
   return (
     <div className="min-h-screen relative flex items-center justify-center bg-white">
       <GradientBackground />
-      
+
       <div className="w-full max-w-xl px-6 py-10">
 
         {/* Title */}
