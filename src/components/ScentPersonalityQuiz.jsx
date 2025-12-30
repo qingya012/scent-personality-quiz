@@ -77,18 +77,12 @@ export default function ScentPersonalityQuiz() {
   const q = questions[index];
 
   return (
-    <div
-      style={{ position: "relative", minHeight: "100vh" }}
-      className="flex items-center justify-center"
-    >
+    <div style={{ position: "relative", minHeight: "100vh", width: "100vw" }}>
       <GradientBackground />
 
-      <div 
-        style={{ position: "relative", zIndex: 1 }} 
-        className="w-full max-w-xl px-6 py-10"
-      >
+      <div style={{ position: "relative", zIndex: 1, minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
       
-        <div className="w-full max-w-xl px-6 py-10">
+        <div style={{ width: "100%", maxWidth:640, padding: "40px 24px" }}>
           {/* Title */}
           <h1 className="text-center text-sm tracking-wide text-gray-500 mb-6">
             Scent Personality Quiz
