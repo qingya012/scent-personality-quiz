@@ -4,6 +4,7 @@ import resultsData from "../data/results.json";
 import Progress from "./Progress";
 import Result from "./Result";
 import Cover from "./Cover";
+import GradientBackground from "./GradientBackground";
 
 const personas = ["fruity", "floral", "woody", "oriental"];
 const tieBreak = ["oriental", "woody", "floral", "fruity"]; // 平分时优先级（可改）
@@ -75,7 +76,9 @@ export default function ScentPersonalityQuiz() {
   const q = questions[index];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white">
+    <div className="min-h-screen relative flex items-center justify-center bg-white">
+      <GradientBackground />
+      
       <div className="w-full max-w-xl px-6 py-10">
 
         {/* Title */}
