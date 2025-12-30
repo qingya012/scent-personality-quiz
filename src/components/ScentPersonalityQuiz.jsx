@@ -19,7 +19,7 @@ function pickWinner(scores) {
 
 export default function ScentPersonalityQuiz() {
   const [started, setStarted] = useState(false);
-  
+
   const questions = questionsData.questions ?? [];
   const total = questions.length;
 
@@ -77,10 +77,10 @@ export default function ScentPersonalityQuiz() {
   const q = questions[index];
 
   return (
-    <div className="min-h-screen relative flex items-center justify-center bg-white">
+    <div className="min-h-screen relative flex items-center justify-center">
       <GradientBackground />
 
-      <div className="w-full max-w-xl px-6 py-10">
+      <div className="w-full max-w-xl px-6 py-10 bg-white/60 backdrop-blur-sm rounded-sxl">
 
         {/* Title */}
         <h1 className="text-center text-sm tracking-wide text-gray-500 mb-6">
