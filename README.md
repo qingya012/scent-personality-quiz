@@ -24,7 +24,7 @@ scent-personality-quiz/
 ├─ public/
 ├─ src/
 │  ├─ components/
-│  │  ├─ Quiz.jsx
+│  │  ├─ ScentPersonalityQuiz.jsx
 │  │  ├─ Result.jsx
 │  │  └─ Progress.jsx
 │  ├─ data/
@@ -34,7 +34,8 @@ scent-personality-quiz/
 │  │  └─ scoring.js           # sumScores, resolveWinner
 │  ├─ App.jsx
 │  ├─ main.jsx
-│  └─ index.css
+│  └─ style.css
+├─ index.html
 ├─ package.json
 ├─ vite.config.js
 └─ README.md
