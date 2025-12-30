@@ -3,9 +3,11 @@ import questionsData from "../data/questions.json";
 import resultsData from "../data/results.json";
 import Progress from "./Progress";
 import Result from "./Result";
+import Cover from "./Cover";
 
 const personas = ["fruity", "floral", "woody", "oriental"];
 const tieBreak = ["oriental", "woody", "floral", "fruity"]; // 平分时优先级（可改）
+const [started, setStarted] = useState(false);
 
 function pickWinner(scores) {
   const maxVal = Math.max(...personas.map((p) => scores[p] ?? 0));
@@ -51,6 +53,10 @@ export default function ScentPersonalityQuiz() {
     setIndex(0);
     setScores({ fruity: 0, floral: 0, woody: 0, oriental: 0 });
   };
+
+  if(!started) {
+    return <Cover onStart={() => setStarted(true)} />;
+  }
 
   if (total === 0) {
     return (
