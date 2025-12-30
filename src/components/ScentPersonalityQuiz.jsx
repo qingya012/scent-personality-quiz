@@ -84,7 +84,7 @@ export default function ScentPersonalityQuiz() {
       
         <div style={{ width: "100%", maxWidth:640, padding: "40px 24px" }}>
           {/* Title */}
-          <h1 className="text-center text-sm tracking-wide text-gray-500 mb-6">
+          <h1 style={{ textAlign: "center", fontSize: 14, color: "#444", marginBottom: 24 }}>
             Scent Personality Quiz
           </h1>
 

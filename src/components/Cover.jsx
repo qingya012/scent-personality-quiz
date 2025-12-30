@@ -2,27 +2,65 @@ import GradientBackground from "./GradientBackground";
 
 export default function Cover({ onStart }) {
   return (
-    <div className="min-h-screen relative flex items-center justify-center">
+    <div style={{ position: "relative", minHeight: "100vh", width: "100vw" }}>
       <GradientBackground />
 
-      <div className="w-full max-w-xl px-6 text-center">
-        <div className="backdrop-blur-sm bg-white/55 border border-white/60 rounded-3xl p-10 shadow-sm">
-          <p className="text-sm tracking-widest text-gray-700">WELCOME</p>
-          <p className="mt-3 text-xs tracking-widest text-gray-600">TO</p>
-          <h1 className="mt-4 text-4xl font-semibold text-gray-900 leading-tight">
+      <div
+        style={{
+          position: "relative",
+          zIndex: 1,
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "0 24px",
+          textAlign: "center",
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            maxWidth: 640,
+            padding: "40px 24px",
+            borderRadius: 24,
+            background: "rgba(255,255,255,0.60)",
+            backdropFilter: "blur(8px)",
+            border: "1px solid rgba(255,255,255,0.70)",
+          }}
+        >
+          <div style={{ letterSpacing: "0.2em", fontSize: 12, color: "#444" }}>
+            WELCOME
+          </div>
+          <div style={{ marginTop: 12, letterSpacing: "0.2em", fontSize: 11, color: "#666" }}>
+            TO
+          </div>
+          <h1 style={{ marginTop: 16, fontSize: 40, fontWeight: 600, color: "#111", lineHeight: 1.15 }}>
             Scent Personality Quiz
           </h1>
 
           <button
             onClick={onStart}
-            className="mt-10 w-full py-3 rounded-xl bg-gray-900 text-white hover:opacity-90 transition"
+            style={{
+              marginTop: 32,
+              width: "100%",
+              padding: "12px 16px",
+              borderRadius: 14,
+              background: "#111",
+              color: "#fff",
+              border: "none",
+              cursor: "pointer",
+              fontSize: 16,
+            }}
           >
             Start
           </button>
 
-          <p className="mt-4 text-xs text-gray-600">10 questions · 4 scent personas</p>
+          <div style={{ marginTop: 14, fontSize: 12, color: "#555" }}>
+            10 questions · 4 scent personas
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
