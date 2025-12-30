@@ -1,8 +1,10 @@
 export default function GradientBackground() {
   return (
     <div
-      className="absolute inset-0"
       style={{
+        position: "absolute",
+        inset: 0,
+        zIndex: 0,
         backgroundImage: `
           radial-gradient(circle at top left,  rgba(247,182,194,0.95), rgba(247,182,194,0) 55%),
           radial-gradient(circle at top right, rgba(255,224,138,0.95), rgba(255,224,138,0) 55%),
@@ -14,3 +16,4 @@ export default function GradientBackground() {
     />
   );
 }
+
