@@ -69,26 +69,57 @@ export default function ScentPersonalityQuiz() {
   const q = questions[index];
 
   return (
-    <div className="p-8 w-full max-w-xl">
-      <Progress current={index + 1} total={total} />
+    <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className="w-full max-w-xl px-6 py-10">
 
-      <h3 className="text-xl font-semibold mb-6 text-center">{q.text}</h3>
+        {/* Title */}
+        <h1 className="text-center text-sm tracking-wide text-gray-500 mb-6">
+          Scent Personality Quiz
+        </h1>
 
-      <div className="space-y-3">
-        {q.options.map((opt, i) => (
-          <button
-            key={i}
-            onClick={() => handlePick(opt.weights)}
-            className="block w-full bg-purple-100 hover:bg-purple-200 text-gray-800 py-3 rounded-lg transition"
-          >
-            {opt.text}
-          </button>
-        ))}
-      </div>
+        {/* Progress bar */}
+        <div className="w-full h-1 bg-gray-200 rounded-full mb-8">
+          <div
+            className="h-1 bg-purple-400 rounded-full transition-all"
+            style={{ width: `${((index + 1) / total) * 100}%` }}
+          />
+        </div>
 
-      <div className="mt-6 text-xs text-gray-400 text-center">
-        Scores: {personas.map((p) => `${p}:${scores[p]}`).join("  ")}
+        {/* Question index */}
+        <p className="text-xs text-gray-400 text-center mb-2">
+          Question {index + 1} of {total}
+        </p>
+
+        {/* Question text */}
+        <h2 className="text-2xl font-semibold text-center leading-snug mb-8">
+          {q.text}
+        </h2>
+
+        {/* Options */}
+        <div className="space-y-3">
+          {q.options.map((opt, i) => (
+            <button
+              key={i}
+              onClick={() => handlePick(opt.weights)}
+              className="
+                w-full
+                py-3
+                px-4
+                rounded-xl
+                border
+                border-gray-200
+                hover:border-gray-400
+                transition
+                text-left
+              "
+            >
+              {opt.text}
+            </button>
+          ))}
+        </div>
+
       </div>
     </div>
   );
+
 }
