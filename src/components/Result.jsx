@@ -1,8 +1,6 @@
-import GradientBackground from "./GradientBackground";
 import { THEME } from "../data/theme";
 
 function QuadrantMark({ winner, theme }) {
-  // 你可以改映射：我先定
   // TL: floral, TR: fruity, BL: woody, BR: oriental
   const pos = {
     floral: [0, 0],
@@ -52,13 +50,16 @@ export default function Result({ result, winner, onRestart }) {
   const theme = THEME[winner] ?? THEME.fruity;
 
   return (
-    <div style={{ position: "relative", minHeight: "100vh", width: "100vw" }}>
-      <GradientBackground />
-
+    <div
+      style={{
+        minHeight: "100vh",
+        width: "100vw",
+        backgroundImage: theme.resultBg,
+        backgroundColor: "#ffffff",
+      }}
+    >
       <div
         style={{
-          position: "relative",
-          zIndex: 1,
           minHeight: "100vh",
           display: "flex",
           alignItems: "center",
@@ -66,17 +67,6 @@ export default function Result({ result, winner, onRestart }) {
           padding: "0 24px",
         }}
       >
-        <div
-          style={{
-            width: "100%",
-            maxWidth: 720,
-            padding: "40px 24px",
-            borderRadius: 24,
-            background: "rgba(255,255,255,0.62)",
-            backdropFilter: "blur(10px)",
-            border: "1px solid rgba(255,255,255,0.72)",
-          }}
-        >
           {/* header: badge + quadrant icon */}
           <div
             style={{
@@ -164,7 +154,6 @@ export default function Result({ result, winner, onRestart }) {
           >
             Retake Quiz
           </button>
-        </div>
       </div>
     </div>
   );

@@ -6,23 +6,40 @@ export const BRAND = {
 
 export const THEME = {
   fruity: {
-    accent: "#F4D37A",      // 香槟金/果香
-    soft: "rgba(244, 211, 122, 0.20)",
     label: "Fruity",
+    accent: "#F4D37A",
+    soft: "rgba(244, 211, 122, 0.22)",
+    resultBg: `
+      radial-gradient(circle at top, rgba(244,211,122,0.55), rgba(244,211,122,0) 60%),
+      linear-gradient(180deg, #FFF7D6 0%, #FFFFFF 70%)
+    `,
   },
   floral: {
-    accent: "#E9A3B1",      // 玫瑰粉/花香
-    soft: "rgba(233, 163, 177, 0.22)",
     label: "Floral",
+    accent: "#E9A3B1",
+    soft: "rgba(233, 163, 177, 0.22)",
+    resultBg: `
+      radial-gradient(circle at top, rgba(233,163,177,0.55), rgba(233,163,177,0) 60%),
+      linear-gradient(180deg, #FFF1F4 0%, #FFFFFF 70%)
+    `,
   },
   woody: {
-    accent: "#7FB28A",      // 苔藓绿/木质
-    soft: "rgba(127, 178, 138, 0.22)",
     label: "Woody",
+    accent: "#7FB28A",
+    soft: "rgba(127, 178, 138, 0.22)",
+    resultBg: `
+      radial-gradient(circle at top, rgba(127,178,138,0.50), rgba(127,178,138,0) 60%),
+      linear-gradient(180deg, #EEF5F0 0%, #FFFFFF 70%)
+    `,
   },
   oriental: {
-    accent: "#D9824A",      // 琥珀橙/东方
-    soft: "rgba(217, 130, 74, 0.22)",
     label: "Oriental",
+    accent: "#D9824A",
+    soft: "rgba(217, 130, 74, 0.22)",
+    resultBg: `
+      radial-gradient(circle at top, rgba(217,130,74,0.55), rgba(217,130,74,0) 60%),
+      linear-gradient(180deg, #FFF2E8 0%, #FFFFFF 70%)
+    `,
   },
 };
+
