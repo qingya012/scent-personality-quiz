@@ -73,10 +73,11 @@ export default function Result({ result, winner, onRestart }) {
         position: "relative",
       }}
     >
-      <div 
+      {/* 顶部高光层：滚动淡出 */}
+      <div
         style={{
           position: "fixed",
-          insert: 0,
+          inset: 0, // ✅ 这里必须是 inset
           pointerEvents: "none",
           opacity: fade,
           transition: "opacity 60ms linear",
@@ -84,64 +85,71 @@ export default function Result({ result, winner, onRestart }) {
           zIndex: 0,
         }}
       />
-        <div
-          style={{
-            position: "relative",
-            zIndex: 1,
-            minHeight: "100vh",
-            display: "flex",
-            alignItems: "center",
+
+      {/* 内容层 */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 1,
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
           justifyContent: "center",
           padding: "0 24px",
         }}
       >
-          {/* header: badge + quadrant icon */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: 16,
-            }}
-          >
-            <div>
-              <div
-                style={{
-                  display: "inline-block",
-                  padding: "6px 12px",
-                  borderRadius: 999,
-                  background: theme.soft,
-                  border: `1px solid ${theme.accent}`,
-                  fontSize: 12,
-                  letterSpacing: "0.12em",
-                  color: "#111",
-                }}
-              >
-                YOUR PERSONA · {theme.label.toUpperCase()}
-              </div>
-
-              <h1
-                style={{
-                  marginTop: 14,
-                  fontSize: 36,
-                  fontWeight: 650,
-                  color: "#111",
-                  lineHeight: 1.15,
-                }}
-              >
-                {result?.name ?? "Your Scent Persona"}
-              </h1>
+        {/* ✅ 卡片容器（你之前缺的） */}
+        <div
+          style={{
+            width: "100%",
+            maxWidth: 720,
+            padding: "40px 24px",
+            borderRadius: 24,
+            background: "rgba(255,255,255,0.62)",
+            backdropFilter: "blur(10px)",
+            border: "1px solid rgba(255,255,255,0.72)",
+          }}
+        >
+          {/* header（紧凑版，不拉裂） */}
+          <div style={{ display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
+            <div
+              style={{
+                display: "inline-block",
+                padding: "6px 12px",
+                borderRadius: 999,
+                background: theme.soft,
+                border: `1px solid ${theme.accent}`,
+                fontSize: 12,
+                letterSpacing: "0.12em",
+                color: "#111",
+              }}
+            >
+              YOUR PERSONA · {theme.label.toUpperCase()}
             </div>
 
-            <QuadrantMark winner={winner} theme={theme} />
+            <div style={{ marginLeft: "auto" }}>
+              <QuadrantMark winner={winner} theme={theme} />
+            </div>
           </div>
 
-          <p style={{ marginTop: 12, fontSize: 16, color: "#333", lineHeight: 1.6 }}>
+          <h1
+            style={{
+              marginTop: 14,
+              fontSize: 40,
+              fontWeight: 650,
+              color: "#111",
+              lineHeight: 1.1,
+            }}
+          >
+            {result?.name ?? "Your Scent Persona"}
+          </h1>
+
+          <p style={{ marginTop: 12, fontSize: 16, color: "#333", lineHeight: 1.6, maxWidth: 560 }}>
             {result?.summary ?? "A scent profile that matches your vibe."}
           </p>
 
           {/* notes */}
-          <div style={{ marginTop: 20 }}>
+          <div style={{ marginTop: 22, maxWidth: 560 }}>
             <div style={{ fontSize: 12, color: "#555", letterSpacing: "0.14em" }}>
               RECOMMENDED NOTES
             </div>
@@ -152,7 +160,7 @@ export default function Result({ result, winner, onRestart }) {
                   style={{
                     padding: "8px 12px",
                     borderRadius: 999,
-                    background: "rgba(255,255,255,0.7)",
+                    background: "rgba(255,255,255,0.75)",
                     border: "1px solid rgba(0,0,0,0.10)",
                     color: "#111",
                     fontSize: 14,
@@ -178,10 +186,11 @@ export default function Result({ result, winner, onRestart }) {
               cursor: "pointer",
               fontSize: 16,
               fontWeight: 650,
-            }}
+           }}
           >
             Retake Quiz
           </button>
+        </div>
       </div>
     </div>
   );
