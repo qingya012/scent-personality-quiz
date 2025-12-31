@@ -1,10 +1,12 @@
 import GradientBackground from "./GradientBackground";
 import logo from "../assets/logo.png";
+import AnimatedBlobs from "./AnimatedBlobs";
 
 export default function Cover({ onStart }) {
   return (
     <div style={{ position: "relative", minHeight: "100vh", width: "100vw" }}>
       <GradientBackground />
+      <AnimatedBlobs />
 
       <div
         style={{

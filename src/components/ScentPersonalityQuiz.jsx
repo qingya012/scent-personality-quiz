@@ -5,6 +5,7 @@ import Progress from "./Progress";
 import Result from "./Result";
 import Cover from "./Cover";
 import GradientBackground from "./GradientBackground";
+import AnimatedBlobs from "./AnimatedBlobs";
 
 const personas = ["fruity", "floral", "woody", "oriental"];
 const tieBreak = ["oriental", "woody", "floral", "fruity"]; // 平分时优先级（可改）
@@ -77,6 +78,7 @@ export default function ScentPersonalityQuiz() {
   return (
     <div style={{ position: "relative", minHeight: "100vh", width: "100vw" }}>
       <GradientBackground />
+      <AnimatedBlobs />
 
       <div style={{ position: "relative", zIndex: 1, minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
       
