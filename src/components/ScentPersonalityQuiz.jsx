@@ -111,12 +111,11 @@ export default function ScentPersonalityQuiz() {
               transition: "width 260ms ease",
             }}
           />
-        </div>
 
-          {/* Question index */}
-          <p className="text-xs text-gray-400 text-center mb-2">
-            Question {index + 1} of {total}
-          </p>
+         {/* Question index */}
+         <p className="text-xs text-gray-400 text-center mb-2">
+           Question {index + 1} of {total}
+         </p>
 
           {/* Question text */}
           <h2 className="text-2xl font-semibold text-center leading-snug mb-8">
