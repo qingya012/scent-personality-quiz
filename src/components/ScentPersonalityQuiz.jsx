@@ -70,9 +70,7 @@ export default function ScentPersonalityQuiz() {
     );
   }
 
-  if (done) {
-    return <Result result={result} onRestart={restart} />;
-  }
+  if (done) return <Result result={result} winner={winner} onRestart={restart} />;
 
   const q = questions[index];
 
@@ -89,12 +87,17 @@ export default function ScentPersonalityQuiz() {
           </h1>
 
           {/* Progress bar */}
-          <div className="w-full h-1 bg-gray-200 rounded-full mb-8">
-            <div
-              className="h-1 bg-purple-400 rounded-full transition-all"
-              style={{ width: `${((index + 1) / total) * 100}%` }}
-            />
+          <div style={{ width: "100%", height: 6, background: "rgba(0,0,0,0.08)", borderRadius: 999, overflow: "hidden", marginBottom: 24 }}>
+          <div
+            style={{
+              height: "100%",
+              width: `${Math.round(((index + 1) / total) * 100)}%`,
+              background: "rgba(17,17,17,0.65)",
+              transition: "width 200ms ease",
+            }}
+          />
           </div>
+
 
           {/* Question index */}
           <p className="text-xs text-gray-400 text-center mb-2">
