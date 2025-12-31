@@ -101,7 +101,8 @@ export default function ScentPersonalityQuiz() {
               boxShadow: "inset 0 1px 0 rgba(255,255,255,0.7)",
               marginBottom: 28,
             }}
-          />
+          >
+
           <div
             style={{
               height: "100%",
@@ -111,6 +112,7 @@ export default function ScentPersonalityQuiz() {
               transition: "width 260ms ease",
             }}
           />
+        </div>
 
          {/* Question index */}
          <p className="text-xs text-gray-400 text-center mb-2">
