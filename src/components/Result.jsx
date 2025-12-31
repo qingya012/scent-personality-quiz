@@ -2,7 +2,7 @@ import GradientBackground from "./GradientBackground";
 import { THEME } from "../data/theme";
 
 function QuadrantMark({ winner, theme }) {
-  // mapping: 你自己定象限位置（我先按直觉放）
+  // 你可以改映射：我先定
   // TL: floral, TR: fruity, BL: woody, BR: oriental
   const pos = {
     floral: [0, 0],
@@ -19,7 +19,7 @@ function QuadrantMark({ winner, theme }) {
         height: 74,
         borderRadius: 18,
         background: theme.soft,
-        border: `1px solid rgba(0,0,0,0.08)`,
+        border: "1px solid rgba(0,0,0,0.08)",
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
         gridTemplateRows: "1fr 1fr",
@@ -37,7 +37,7 @@ function QuadrantMark({ winner, theme }) {
             key={i}
             style={{
               borderRadius: 10,
-              background: active ? theme.accent : "rgba(255,255,255,0.7)",
+              background: active ? theme.accent : "rgba(255,255,255,0.70)",
               border: active ? "none" : "1px solid rgba(0,0,0,0.10)",
               boxShadow: active ? "0 6px 16px rgba(0,0,0,0.12)" : "none",
             }}
@@ -77,25 +77,46 @@ export default function Result({ result, winner, onRestart }) {
             border: "1px solid rgba(255,255,255,0.72)",
           }}
         >
-          {/* badge */}
+          {/* header: badge + quadrant icon */}
           <div
             style={{
-              display: "inline-block",
-              padding: "6px 12px",
-              borderRadius: 999,
-              background: theme.soft,
-              color: "#111",
-              border: `1px solid ${theme.accent}`,
-              fontSize: 12,
-              letterSpacing: "0.12em",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: 16,
             }}
           >
-            YOUR PERSONA · {theme.label.toUpperCase()}
-          </div>
+            <div>
+              <div
+                style={{
+                  display: "inline-block",
+                  padding: "6px 12px",
+                  borderRadius: 999,
+                  background: theme.soft,
+                  border: `1px solid ${theme.accent}`,
+                  fontSize: 12,
+                  letterSpacing: "0.12em",
+                  color: "#111",
+                }}
+              >
+                YOUR PERSONA · {theme.label.toUpperCase()}
+              </div>
 
-          <h1 style={{ marginTop: 16, fontSize: 36, fontWeight: 650, color: "#111", lineHeight: 1.15 }}>
-            {result?.name ?? "Your Scent Persona"}
-          </h1>
+              <h1
+                style={{
+                  marginTop: 14,
+                  fontSize: 36,
+                  fontWeight: 650,
+                  color: "#111",
+                  lineHeight: 1.15,
+                }}
+              >
+                {result?.name ?? "Your Scent Persona"}
+              </h1>
+            </div>
+
+            <QuadrantMark winner={winner} theme={theme} />
+          </div>
 
           <p style={{ marginTop: 12, fontSize: 16, color: "#333", lineHeight: 1.6 }}>
             {result?.summary ?? "A scent profile that matches your vibe."}
@@ -114,7 +135,7 @@ export default function Result({ result, winner, onRestart }) {
                     padding: "8px 12px",
                     borderRadius: 999,
                     background: "rgba(255,255,255,0.7)",
-                    border: `1px solid rgba(0,0,0,0.10)`,
+                    border: "1px solid rgba(0,0,0,0.10)",
                     color: "#111",
                     fontSize: 14,
                   }}
@@ -138,7 +159,7 @@ export default function Result({ result, winner, onRestart }) {
               border: "none",
               cursor: "pointer",
               fontSize: 16,
-              fontWeight: 600,
+              fontWeight: 650,
             }}
           >
             Retake Quiz
