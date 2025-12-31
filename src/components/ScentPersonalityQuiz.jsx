@@ -20,6 +20,7 @@ function pickWinner(scores) {
 
 export default function ScentPersonalityQuiz() {
   const [started, setStarted] = useState(false);
+  const [picked, setPicked] = useState(null); // record current option index
 
   const questions = questionsData.questions ?? [];
   const total = questions.length;
@@ -41,7 +42,10 @@ export default function ScentPersonalityQuiz() {
 
   const result = winner ? resultsData[winner] : null;
 
-  const handlePick = (weights) => {
+  const handlePick = (weights, optIndex) => {
+    if (picked !== null) return; // 防连点
+    setPicked(optIndex);
+
     setScores((prev) => {
       const next = { ...prev };
       personas.forEach((p, i) => {
@@ -49,7 +53,11 @@ export default function ScentPersonalityQuiz() {
       });
       return next;
     });
-    setIndex((prev) => prev + 1);
+
+    setTimeout(() => {
+      setIndex((prev) => prev + 1);
+      setPicked(null);
+    }, 160);
   };
 
   const restart = () => {
@@ -57,7 +65,7 @@ export default function ScentPersonalityQuiz() {
     setScores({ fruity: 0, floral: 0, woody: 0, oriental: 0 });
   };
 
-  if(!started) {
+  if (!started) {
     return <Cover onStart={() => setStarted(true)} />;
   }
 
@@ -134,14 +142,18 @@ export default function ScentPersonalityQuiz() {
                   width: "100%",
                   padding: "14px 18px",
                   borderRadius: 18, // 方圆角（不是 pill）
-                  background: "rgba(255,255,255,0.75)", // 半透明白
-                  border: "1px solid rgba(0,0,0,0.12)", // 灰色边框
+                  background: selected ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.75)",
+                  border: selected
+                    ? `1px solid ${THEME?.fruity?.accent ? "rgba(0,0,0,0.28)" : "rgba(0,0,0,0.28)"}`
+                    : "1px solid rgba(0,0,0,0.12)",
                   color: "#111",
                   fontSize: 16,
                   textAlign: "left",
                   cursor: "pointer",
                   transition: "all 160ms ease",
                   backdropFilter: "blur(6px)", // 关键：玻璃感
+                  transform: selected ? "scale(0.985)" : "scale(1)",
+                  boxShadow: selected ? "0 10px 24px rgba(0,0,0,0.10)" : "none",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = "rgba(0,0,0,0.28)";
