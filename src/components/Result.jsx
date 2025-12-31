@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { THEME } from "../data/theme";
 
 function QuadrantMark({ winner, theme }) {
@@ -48,21 +49,48 @@ function QuadrantMark({ winner, theme }) {
 
 export default function Result({ result, winner, onRestart }) {
   const theme = THEME[winner] ?? THEME.fruity;
+  const [fade, setFade] = useState(1);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY || 0;
+      const max = 240;
+      const v = 1 - Math.min(y / max, 1);
+      setFade(v);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div
       style={{
         minHeight: "100vh",
         width: "100vw",
-        backgroundImage: theme.resultBg,
-        backgroundColor: "#ffffff",
+        backgroundImage: theme.resultBase,
+        backgroundColor: "#fff",
+        position: "relative",
       }}
     >
-      <div
+      <div 
         style={{
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
+          position: "fixed",
+          insert: 0,
+          pointerEvents: "none",
+          opacity: fade,
+          transition: "opacity 60ms linear",
+          backgroundImage: theme.resultHighlight,
+          zIndex: 0,
+        }}
+      />
+        <div
+          style={{
+            position: "relative",
+            zIndex: 1,
+            minHeight: "100vh",
+            display: "flex",
+            alignItems: "center",
           justifyContent: "center",
           padding: "0 24px",
         }}

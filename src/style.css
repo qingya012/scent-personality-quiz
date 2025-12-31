@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@keyframes blobMove {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  25%  { transform: translate(40px, -30px) scale(1.07); }
+  50%  { transform: translate(-30px, 50px) scale(0.98); }
+  75%  { transform: translate(30px, 20px) scale(1.05); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
