@@ -117,21 +117,37 @@ export default function ScentPersonalityQuiz() {
               <button
                 key={i}
                 onClick={() => handlePick(opt.weights)}
-                className="
-                  w-full
-                  py-3
-                  px-4
-                  rounded-xl
-                  border
-                  border-gray-200
-                  hover:border-gray-400
-                  transition
-                  text-left
-                "
+                style={{
+                  width: "100%",
+                  padding: "14px 18px",
+                  borderRadius: 18, // 方圆角（不是 pill）
+                  background: "rgba(255,255,255,0.75)", // 半透明白
+                  border: "1px solid rgba(0,0,0,0.12)", // 灰色边框
+                  color: "#111",
+                  fontSize: 16,
+                  textAlign: "left",
+                  cursor: "pointer",
+                  transition: "all 160ms ease",
+                  backdropFilter: "blur(6px)", // 关键：玻璃感
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(0,0,0,0.28)";
+                  e.currentTarget.style.background = "rgba(255,255,255,0.9)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(0,0,0,0.12)";
+                  e.currentTarget.style.background = "rgba(255,255,255,0.75)";
+                }}
+                onMouseDown={(e) => {
+                  e.currentTarget.style.transform = "scale(0.985)";
+                }}
+                onMouseUp={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                }}
               >
-                {opt.text}
-              </button>
-            ))}
+               {opt.text}
+             </button>
+           ))}
           </div>
 
         </div>
