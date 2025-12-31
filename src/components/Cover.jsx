@@ -1,5 +1,5 @@
 import GradientBackground from "./GradientBackground";
-import logo from "../assets/logo.png";
+import LogoMark from "../assets/LogoMark.jsx";
 import AnimatedBlobs from "./AnimatedBlobs";
 
 export default function Cover({ onStart }) {
@@ -32,17 +32,9 @@ export default function Cover({ onStart }) {
           }}
         >
 
-          <img
-            src={logo}
-            alt="Scent Personality Quiz logo"
-            style={{
-                width: 96,
-                height: 96,
-                margin: "0 auto 20px",
-                display: "block",
-                opacity: 0.9,
-            }}
-          />
+          <div style={{ display: "flex", justifyContent: "center", marginBottom: 18 }}>
+            <LogoMark size={92} />
+          </div>
 
           <div style={{ letterSpacing: "0.2em", fontSize: 12, color: "#444" }}>
             WELCOME
