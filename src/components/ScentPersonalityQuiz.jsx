@@ -89,17 +89,29 @@ export default function ScentPersonalityQuiz() {
           </h1>
 
           {/* Progress bar */}
-          <div style={{ width: "100%", height: 6, background: "rgba(0,0,0,0.08)", borderRadius: 999, overflow: "hidden", marginBottom: 24 }}>
+          <div
+            style={{
+              width: "100%",
+              height: 10,
+              borderRadius: 999,
+              background: "rgba(255,255,255,0.55)",
+              border: "1px solid rgba(0,0,0,0.10)",
+              backdropFilter: "blur(10px)",
+              overflow: "hidden",
+              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.7)",
+              marginBottom: 28,
+            }}
+          />
           <div
             style={{
               height: "100%",
-              width: `${Math.round(((index + 1) / total) * 100)}%`,
-              background: "rgba(17,17,17,0.65)",
-              transition: "width 200ms ease",
+              width: `${(index / total) * 100}%`,
+              borderRadius: 999,
+              background: "rgba(0,0,0,0.65)",
+              transition: "width 260ms ease",
             }}
           />
-          </div>
-
+        </div>
 
           {/* Question index */}
           <p className="text-xs text-gray-400 text-center mb-2">
