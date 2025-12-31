@@ -105,7 +105,7 @@ export default function ScentPersonalityQuiz() {
           <div
             style={{
               height: "100%",
-              width: `${(index / total) * 100}%`,
+              width: `${Math.max(0, Math.min(100, ((index + 1) / total) * 100))}%`,
               borderRadius: 999,
               background: "rgba(0,0,0,0.65)",
               transition: "width 260ms ease",
