@@ -1,6 +1,53 @@
 import GradientBackground from "./GradientBackground";
 import { THEME } from "../data/theme";
 
+function QuadrantMark({ winner, theme }) {
+  // mapping: 你自己定象限位置（我先按直觉放）
+  // TL: floral, TR: fruity, BL: woody, BR: oriental
+  const pos = {
+    floral: [0, 0],
+    fruity: [0, 1],
+    woody: [1, 0],
+    oriental: [1, 1],
+  };
+  const [r, c] = pos[winner] ?? [0, 0];
+
+  return (
+    <div
+      style={{
+        width: 74,
+        height: 74,
+        borderRadius: 18,
+        background: theme.soft,
+        border: `1px solid rgba(0,0,0,0.08)`,
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gridTemplateRows: "1fr 1fr",
+        gap: 8,
+        padding: 12,
+      }}
+      aria-label="Quadrant"
+    >
+      {[0, 0, 0, 0].map((_, i) => {
+        const rr = Math.floor(i / 2);
+        const cc = i % 2;
+        const active = rr === r && cc === c;
+        return (
+          <div
+            key={i}
+            style={{
+              borderRadius: 10,
+              background: active ? theme.accent : "rgba(255,255,255,0.7)",
+              border: active ? "none" : "1px solid rgba(0,0,0,0.10)",
+              boxShadow: active ? "0 6px 16px rgba(0,0,0,0.12)" : "none",
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
 export default function Result({ result, winner, onRestart }) {
   const theme = THEME[winner] ?? THEME.fruity;
 

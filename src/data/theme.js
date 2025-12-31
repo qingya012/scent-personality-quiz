@@ -1,3 +1,9 @@
+export const BRAND = {
+  name: "Scent Personality Quiz",
+  short: "SPQ",
+  ink: "#111111",
+};
+
 export const THEME = {
   fruity: {
     accent: "#F4D37A",      // 香槟金/果香

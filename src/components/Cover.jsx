@@ -1,4 +1,5 @@
 import GradientBackground from "./GradientBackground";
+import logo from "../assets/logo.png";
 
 export default function Cover({ onStart }) {
   return (
@@ -30,12 +31,13 @@ export default function Cover({ onStart }) {
         >
 
           <img
-            src="/logo.png"
+            src={logo}
             alt="Scent Personality Quiz logo"
             style={{
                 width: 96,
                 height: 96,
                 margin: "0 auto 20px",
+                display: "block",
                 opacity: 0.9,
             }}
           />
