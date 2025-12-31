@@ -112,7 +112,7 @@ export default function ScentPersonalityQuiz() {
           </h2>
 
           {/* Options */}
-          <div className="space-y-3">
+          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
             {q.options.map((opt, i) => (
               <button
                 key={i}
