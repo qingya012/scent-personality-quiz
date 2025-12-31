@@ -28,6 +28,18 @@ export default function Cover({ onStart }) {
             border: "1px solid rgba(255,255,255,0.70)",
           }}
         >
+
+          <img
+            src="/logo.png"
+            alt="Scent Personality Quiz logo"
+            style={{
+                width: 96,
+                height: 96,
+                margin: "0 auto 20px",
+                opacity: 0.9,
+            }}
+          />
+
           <div style={{ letterSpacing: "0.2em", fontSize: 12, color: "#444" }}>
             WELCOME
           </div>
