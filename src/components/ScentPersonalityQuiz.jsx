@@ -140,7 +140,7 @@ export default function ScentPersonalityQuiz() {
               return (
                 <button
                   key={i}
-                  onClick={() => handlePick(opt.weights)}
+                  onClick={() => handlePick(opt.weights, i)}
                   className={`spq-glass spq-option ${selected ? "is-selected" : ""}`}
                 >
                   {opt.text}
