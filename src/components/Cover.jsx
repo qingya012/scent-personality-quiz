@@ -46,7 +46,7 @@ export default function Cover({ onStart }) {
             Scent Personality Quiz
           </h1>
 
-          <button onClick={onStart} className="spq-primary">
+          <button onClick={onStart} className="spq-primary" style={{ fontFamily: "inherit", }}>
             Start
           </button>
 

@@ -196,6 +196,8 @@ export default function Result({ result, winner, onRestart }) {
               background: "rgba(255,255,255,0.62)",
               boxShadow: "0 10px 22px rgba(0,0,0,0.10)",
               cursor: "pointer",
+
+              fontFamily: "inherit",
           }}
           >
             Retake ↻

@@ -142,6 +142,7 @@ export default function ScentPersonalityQuiz() {
                   key={i}
                   onClick={() => handlePick(opt.weights, i)}
                   className={`spq-glass spq-option ${selected ? "is-selected" : ""}`}
+                  style={{ fontFamily: "inherit", }}
                 >
                   {opt.text}
                 </button>
