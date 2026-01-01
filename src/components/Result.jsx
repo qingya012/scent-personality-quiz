@@ -98,7 +98,7 @@ export default function Result({ result, winner, onRestart }) {
           padding: "0 24px",
         }}
       >
-        {/* ✅ 卡片容器（你之前缺的） */}
+        {/* 卡片容器 */}
         <div
           style={{
             width: "100%",
@@ -112,6 +112,8 @@ export default function Result({ result, winner, onRestart }) {
               0 24px 60px rgba(0,0,0,0.08),
               inset 0 1px 0 rgba(255, 255, 255, 0.6)
             `,
+            position: "relative",
+            paddingBottom: 72,
           }}
         >
           {/* header（紧凑版，不拉裂） */}
@@ -179,11 +181,26 @@ export default function Result({ result, winner, onRestart }) {
           {/* CTA */}
           <button
             onClick={onRestart}
-            className="spq-accent"
-            style={{ background: theme.accent }}
+            className="spq-glass"
+            style={{
+              position: "absolute",
+              right: 22,
+              bottom: 22,
+              width: "auto",
+              padding: "10px 14px",
+              borderRadius: 14,
+              fontSize: 13,
+              fontWeight: 650,
+              color: "#111",
+              borderColor: "rgba(0,0,0,0.14)",
+              background: "rgba(255,255,255,0.78)",
+              boxShadow: "0 14px 28px rgba(0,0,0,0.12)",
+              cursor: "pointer",
+          }}
           >
-            Retake Quiz
+            Retake ↻
           </button>
+
         </div>
       </div>
     </div>
