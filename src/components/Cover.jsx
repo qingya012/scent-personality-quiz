@@ -36,10 +36,10 @@ export default function Cover({ onStart }) {
             <LogoMark size={92} />
           </div>
 
-          <div style={{ letterSpacing: "0.22em", fontSize: 16, color: "#444" }}>
+          <div style={{ letterSpacing: "0.26em", fontSize: 14, color: "#444" }}>
             WELCOME
           </div>
-          <div style={{ marginTop: 12, letterSpacing: "0.28em", fontSize: 13, color: "#666" }}>
+          <div style={{ marginTop: 12, letterSpacing: "0.30em", fontSize: 12, color: "#666" }}>
             TO
           </div>
           <h1 style={{ marginTop: 16, fontSize: 40, fontWeight: 600, color: "#111", lineHeight: 1.15 }}>

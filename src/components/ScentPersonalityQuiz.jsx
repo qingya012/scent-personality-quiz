@@ -133,7 +133,7 @@ export default function ScentPersonalityQuiz() {
           </h2>
 
           {/* Options */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 14, fontSize: 16, lineHeight: 1.5, letterSpacing: "0.005em", }}>
             {q.options.map((opt, i) => {
               const selected = picked === i;
 

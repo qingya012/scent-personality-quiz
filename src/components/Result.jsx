@@ -181,7 +181,7 @@ export default function Result({ result, winner, onRestart }) {
           {/* CTA */}
           <button
             onClick={onRestart}
-            className="spq-accent"
+            className="spq-glass"
             style={{
               position: "absolute",
               right: 22,
@@ -196,9 +196,6 @@ export default function Result({ result, winner, onRestart }) {
               background: "rgba(255,255,255,0.62)",
               boxShadow: "0 10px 22px rgba(0,0,0,0.10)",
               cursor: "pointer",
-
-              fontFamily: "Inter, system-ui, sans-serif",
-              letterSpacing: "-0.01em",
           }}
           >
             Retake ↻
