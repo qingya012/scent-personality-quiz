@@ -190,11 +190,11 @@ export default function Result({ result, winner, onRestart }) {
               padding: "10px 14px",
               borderRadius: 14,
               fontSize: 13,
-              fontWeight: 650,
+              fontWeight: 600,
               color: "#111",
               borderColor: "rgba(0,0,0,0.14)",
-              background: "rgba(255,255,255,0.78)",
-              boxShadow: "0 14px 28px rgba(0,0,0,0.12)",
+              background: "rgba(255,255,255,0.62)",
+              boxShadow: "0 10px 22px rgba(0,0,0,0.10)",
               cursor: "pointer",
           }}
           >
