@@ -1,10 +1,99 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @keyframes blobMove {
   0%   { transform: translate(0px, 0px) scale(1); }
   25%  { transform: translate(40px, -30px) scale(1.07); }
   50%  { transform: translate(-30px, 50px) scale(0.98); }
   75%  { transform: translate(30px, 20px) scale(1.05); }
   100% { transform: translate(0px, 0px) scale(1); }
+}
+
+/* ===== SPQ button system ===== */
+.spq-glass {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease,
+    border-color 160ms ease;
+}
+
+.spq-glass:hover {
+  background: rgba(255, 255, 255, 0.90);
+  border-color: rgba(0, 0, 0, 0.28);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.10);
+  transform: translateY(-1px);
+}
+
+.spq-glass:active {
+  transform: translateY(0px) scale(0.985);
+}
+
+/* 选项按钮专用（和 glass 同材质） */
+.spq-option {
+  width: 100%;
+  text-align: left;
+  padding: 14px 18px;
+  border-radius: 18px;
+  color: #111;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 选中态：不依赖 hover，hover 也不会把它冲掉 */
+.spq-option.is-selected {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(0, 0, 0, 0.30);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  transform: scale(0.985);
+}
+
+/* 主按钮（Cover dark） */
+.spq-primary {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(0, 0, 0, 0.86);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+}
+
+.spq-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
+}
+
+.spq-primary:active {
+  transform: translateY(0px) scale(0.99);
+}
+
+/* Result 按钮（用主题色，但 hover/active 统一） */
+.spq-accent {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.12);
+  color: #111;
+  font-size: 16px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14);
+}
+
+.spq-accent:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.16);
+  filter: brightness(1.02);
+}
+
+.spq-accent:active {
+  transform: translateY(0px) scale(0.99);
 }

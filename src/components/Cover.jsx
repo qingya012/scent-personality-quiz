@@ -46,20 +46,7 @@ export default function Cover({ onStart }) {
             Scent Personality Quiz
           </h1>
 
-          <button
-            onClick={onStart}
-            style={{
-              marginTop: 32,
-              width: "100%",
-              padding: "12px 16px",
-              borderRadius: 14,
-              background: "#111",
-              color: "#fff",
-              border: "none",
-              cursor: "pointer",
-              fontSize: 16,
-            }}
-          >
+          <button onClick={onStart} className="spq-primary">
             Start
           </button>
 

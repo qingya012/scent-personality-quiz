@@ -141,23 +141,7 @@ export default function ScentPersonalityQuiz() {
                 <button
                   key={i}
                   onClick={() => handlePick(opt.weights)}
-                  style={{
-                    width: "100%",
-                    padding: "14px 18px",
-                    borderRadius: 18, // 方圆角（不是 pill）
-                    background: selected ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.75)",
-                    border: selected
-                      ? `1px solid ${THEME?.fruity?.accent ? "rgba(0,0,0,0.28)" : "rgba(0,0,0,0.28)"}`
-                    : "1px solid rgba(0,0,0,0.12)",
-                    color: "#111",
-                    fontSize: 16,
-                    textAlign: "left",
-                    cursor: "pointer",
-                    transition: "all 160ms ease",
-                    backdropFilter: "blur(6px)", // 关键：玻璃感
-                    transform: selected ? "scale(0.985)" : "scale(1)",
-                    boxShadow: selected ? "0 10px 24px rgba(0,0,0,0.10)" : "none",
-                  }}
+                  className={`spq-glass spq-option ${selected ? "is-selected" : ""}`}
                 >
                   {opt.text}
                 </button>

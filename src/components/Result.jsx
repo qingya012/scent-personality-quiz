@@ -179,18 +179,8 @@ export default function Result({ result, winner, onRestart }) {
           {/* CTA */}
           <button
             onClick={onRestart}
-            style={{
-              marginTop: 28,
-              width: "100%",
-              padding: "12px 16px",
-              borderRadius: 14,
-              background: theme.accent,
-              color: "#111",
-              border: "none",
-              cursor: "pointer",
-              fontSize: 16,
-              fontWeight: 650,
-           }}
+            className="spq-accent"
+            style={{ background: theme.accent }}
           >
             Retake Quiz
           </button>
