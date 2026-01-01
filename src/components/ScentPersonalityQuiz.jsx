@@ -134,50 +134,38 @@ export default function ScentPersonalityQuiz() {
 
           {/* Options */}
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-            {q.options.map((opt, i) => (
-              <button
-                key={i}
-                onClick={() => handlePick(opt.weights)}
-                style={{
-                  width: "100%",
-                  padding: "14px 18px",
-                  borderRadius: 18, // 方圆角（不是 pill）
-                  background: selected ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.75)",
-                  border: selected
-                    ? `1px solid ${THEME?.fruity?.accent ? "rgba(0,0,0,0.28)" : "rgba(0,0,0,0.28)"}`
-                    : "1px solid rgba(0,0,0,0.12)",
-                  color: "#111",
-                  fontSize: 16,
-                  textAlign: "left",
-                  cursor: "pointer",
-                  transition: "all 160ms ease",
-                  backdropFilter: "blur(6px)", // 关键：玻璃感
-                  transform: selected ? "scale(0.985)" : "scale(1)",
-                  boxShadow: selected ? "0 10px 24px rgba(0,0,0,0.10)" : "none",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "rgba(0,0,0,0.28)";
-                  e.currentTarget.style.background = "rgba(255,255,255,0.9)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "rgba(0,0,0,0.12)";
-                  e.currentTarget.style.background = "rgba(255,255,255,0.75)";
-                }}
-                onMouseDown={(e) => {
-                  e.currentTarget.style.transform = "scale(0.985)";
-                }}
-                onMouseUp={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                }}
-              >
-               {opt.text}
-             </button>
-           ))}
-          </div>
+            {q.options.map((opt, i) => {
+              const selected = picked === i;
 
-        </div>
+              return (
+                <button
+                  key={i}
+                  onClick={() => handlePick(opt.weights)}
+                  style={{
+                    width: "100%",
+                    padding: "14px 18px",
+                    borderRadius: 18, // 方圆角（不是 pill）
+                    background: selected ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.75)",
+                    border: selected
+                      ? `1px solid ${THEME?.fruity?.accent ? "rgba(0,0,0,0.28)" : "rgba(0,0,0,0.28)"}`
+                    : "1px solid rgba(0,0,0,0.12)",
+                    color: "#111",
+                    fontSize: 16,
+                    textAlign: "left",
+                    cursor: "pointer",
+                    transition: "all 160ms ease",
+                    backdropFilter: "blur(6px)", // 关键：玻璃感
+                    transform: selected ? "scale(0.985)" : "scale(1)",
+                    boxShadow: selected ? "0 10px 24px rgba(0,0,0,0.10)" : "none",
+                  }}
+                >
+                  {opt.text}
+                </button>
+             );
+           })}
+         </div>
+       </div>
       </div>
     </div>
   );
-
 }
